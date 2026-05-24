@@ -9,7 +9,7 @@ Detecta **8 tipos de sushi** a través de la cámara o mediante imagen estática
 
 ## Requisitos
 
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/) instalado y en ejecución
+- Docker Desktop
 
 ---
 
