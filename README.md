@@ -7,16 +7,6 @@ Detecta **8 tipos de sushi** a través de la cámara o mediante imagen estática
 
 ---
 
-## Capturas de pantalla
-
-> Añade capturas en `docs/images/` y actualiza esta sección.
-
-| Modo cámara | Modo imagen |
-|:-----------:|:-----------:|
-| *(screenshot_camara.png)* | *(screenshot_imagen.png)* |
-
----
-
 ## Requisitos
 
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) instalado y en ejecución
