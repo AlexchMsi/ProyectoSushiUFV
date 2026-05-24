@@ -1,0 +1,22 @@
+services:
+  sushi-detector:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8000"
+    volumes:
+      # Monta el modelo entrenado en el contenedor
+      - ./models/best.pt:/app/models/best.pt:ro
+    environment:
+      - MODEL_PATH=/app/models/best.pt
+    restart: unless-stopped
+
+    # Descomentar para usar GPU NVIDIA:
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]

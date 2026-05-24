@@ -1,0 +1,281 @@
+/* ── Layout ── */
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100svh;
+  background: #0f1117;
+  color: #e5e7eb;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.app__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: #1a1d27;
+  border-bottom: 1px solid #2e313d;
+  flex-shrink: 0;
+}
+
+.app__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  color: #f9fafb;
+  letter-spacing: -0.02em;
+}
+
+.app__status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4b5563;
+}
+.status-dot--ok  { background: #22c55e; box-shadow: 0 0 6px #22c55e88; }
+.status-dot--off { background: #6b7280; }
+
+.app__main {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.app__body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ── Video area ── */
+.app__video-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 12px;
+  overflow: hidden;
+}
+
+.camera-container {
+  position: relative;
+  flex: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #1a1d27;
+  border: 1px solid #2e313d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.camera-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.camera-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.camera-placeholder {
+  color: #6b7280;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 40px;
+}
+
+/* ── Controls ── */
+.app__controls {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.1s;
+}
+.btn:hover  { opacity: 0.9; }
+.btn:active { transform: scale(0.97); }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.btn--primary   { background: #6366f1; color: #fff; }
+.btn--secondary { background: #374151; color: #e5e7eb; }
+.btn--record    { background: #1f2937; color: #e5e7eb; border: 1px solid #4b5563; }
+.btn--danger    { background: #dc2626; color: #fff; display: flex; align-items: center; gap: 6px; }
+
+.rec-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+  animation: pulse 1s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+.record-controls { display: flex; }
+
+/* ── Count Panel ── */
+.count-panel {
+  width: 220px;
+  flex-shrink: 0;
+  background: #1a1d27;
+  border-left: 1px solid #2e313d;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+}
+
+.count-panel__title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6b7280;
+  margin: 0;
+}
+
+.count-panel__empty {
+  font-size: 0.8rem;
+  color: #4b5563;
+  margin: 0;
+}
+
+.count-panel__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.count-panel__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 10px;
+  background: #0f1117;
+  border-radius: 6px;
+  border: 1px solid #2e313d;
+}
+
+.count-panel__name {
+  font-size: 0.8rem;
+  color: #d1d5db;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.count-panel__badge {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #a78bfa;
+  min-width: 20px;
+  text-align: right;
+}
+
+.count-panel__total {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid #2e313d;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.count-panel__total-value {
+  font-weight: 700;
+  color: #f9fafb;
+  font-size: 1.1rem;
+}
+
+/* ── Tabs ── */
+.app__tabs {
+  display: flex;
+  gap: 4px;
+  background: #0f1117;
+  padding: 4px;
+  border-radius: 8px;
+}
+
+.tab-btn {
+  padding: 6px 16px;
+  border-radius: 6px;
+  border: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: transparent;
+  color: #6b7280;
+  transition: background 0.15s, color 0.15s;
+}
+.tab-btn:hover { color: #d1d5db; }
+.tab-btn--active { background: #1a1d27; color: #f9fafb; }
+
+/* ── Image canvas ── */
+.image-canvas {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: auto;
+}
+
+.image-analyzing {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 17, 23, 0.6);
+  color: #a78bfa;
+  font-size: 0.9rem;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+/* ── Error ── */
+.error-msg {
+  color: #f87171;
+  font-size: 0.82rem;
+  margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .count-panel {
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid #2e313d;
+    max-height: 160px;
+  }
+  .app__body { flex-direction: column; }
+}
